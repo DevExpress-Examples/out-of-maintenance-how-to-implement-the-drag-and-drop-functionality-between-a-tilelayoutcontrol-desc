@@ -2,7 +2,7 @@
 *Files to look at*:
 
 * [DataHelper.cs](./CS/TileLayoutControlDescendant/DataHelper.cs) (VB: [DataHelper.vb](./VB/TileLayoutControlDescendant/DataHelper.vb))
-* [MainWindow.xaml](./CS/TileLayoutControlDescendant/MainWindow.xaml) (VB: [MainWindow.xaml.vb](./VB/TileLayoutControlDescendant/MainWindow.xaml.vb))
+* [MainWindow.xaml](./CS/TileLayoutControlDescendant/MainWindow.xaml) (VB: [MainWindow.xaml](./VB/TileLayoutControlDescendant/MainWindow.xaml))
 * [MainWindow.xaml.cs](./CS/TileLayoutControlDescendant/MainWindow.xaml.cs) (VB: [MainWindow.xaml.vb](./VB/TileLayoutControlDescendant/MainWindow.xaml.vb))
 * [TileLayoutCntrlDescendant.cs](./CS/TileLayoutControlDescendant/TileLayoutCntrlDescendant.cs) (VB: [TileLayoutCntrlDescendant.vb](./VB/TileLayoutControlDescendant/TileLayoutCntrlDescendant.vb))
 <!-- default file list end -->
