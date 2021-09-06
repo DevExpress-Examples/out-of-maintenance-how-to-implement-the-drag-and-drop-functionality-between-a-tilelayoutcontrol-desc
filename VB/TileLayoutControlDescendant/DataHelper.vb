@@ -7,30 +7,44 @@ Imports System.Windows.Media.Imaging
 Imports System.ComponentModel
 
 Namespace TileLayoutControlDescendant
-	Public NotInheritable Class DataHelper
-
-		Private Sub New()
-		End Sub
-
-		Public Shared Function GetData1() As ObservableCollection(Of ExampleObject)
-			Dim collection As New ObservableCollection(Of ExampleObject)() From { _
-				New ExampleObject With {.Name = "Basket", .ImageUri ="Images/Basket.png"}, _
-				New ExampleObject With {.Name = "Check", .ImageUri ="Images/Check.png"}, _
-				New ExampleObject With {.Name = "Customer", .ImageUri ="Images/Customer.png"} _
+	Public Module DataHelper
+		Public Function GetData1() As ObservableCollection(Of ExampleObject)
+			Dim collection As New ObservableCollection(Of ExampleObject)() From {
+				New ExampleObject With {
+					.Name = "Basket",
+					.ImageUri ="Images/Basket.png"
+				},
+				New ExampleObject With {
+					.Name = "Check",
+					.ImageUri ="Images/Check.png"
+				},
+				New ExampleObject With {
+					.Name = "Customer",
+					.ImageUri ="Images/Customer.png"
+				}
 			}
 			Return collection
 		End Function
-		Public Shared Function GetData2() As ObservableCollection(Of ExampleObject)
-			Dim collection As New ObservableCollection(Of ExampleObject)() From { _
-				New ExampleObject With {.Name = "Folder", .ImageUri ="Images/Folder.png"}, _
-				New ExampleObject With {.Name = "Key", .ImageUri ="Images/Key.png"}, _
-				New ExampleObject With {.Name = "Home", .ImageUri ="Images/Home.png"} _
+		Public Function GetData2() As ObservableCollection(Of ExampleObject)
+			Dim collection As New ObservableCollection(Of ExampleObject)() From {
+				New ExampleObject With {
+					.Name = "Folder",
+					.ImageUri ="Images/Folder.png"
+				},
+				New ExampleObject With {
+					.Name = "Key",
+					.ImageUri ="Images/Key.png"
+				},
+				New ExampleObject With {
+					.Name = "Home",
+					.ImageUri ="Images/Home.png"
+				}
 			}
 			Return collection
 		End Function
-	End Class
+	End Module
 	Public Class ExampleObject
-		Implements INotifyPropertyChanged
+		Inherits DevExpress.Mvvm.BindableBase
 
 		' Fields...
 		Private _ImageUri As String
@@ -41,11 +55,7 @@ Namespace TileLayoutControlDescendant
 				Return _Name
 			End Get
 			Set(ByVal value As String)
-				If _Name = value Then
-					Return
-				End If
-				_Name = value
-				NotifyPropertyChanged("Name")
+				SetProperty(_Name, value, Function() Name)
 			End Set
 		End Property
 
@@ -54,12 +64,8 @@ Namespace TileLayoutControlDescendant
 				Return _ImageUri
 			End Get
 			Set(ByVal value As String)
-				If _ImageUri = value Then
-					Return
-				End If
-				_ImageUri = value
-				NotifyPropertyChanged("ImageUri")
-				NotifyPropertyChanged("ImageSource")
+				SetProperty(_ImageUri, value, Function() ImageUri)
+				RaisePropertiesChanged("ImageSource")
 			End Set
 		End Property
 
@@ -68,10 +74,5 @@ Namespace TileLayoutControlDescendant
 				Return If(String.IsNullOrEmpty(ImageUri), Nothing, New BitmapImage(New Uri("/TileLayoutControlDescendant;component/" & ImageUri, UriKind.Relative)))
 			End Get
 		End Property
-
-		Public Event PropertyChanged As PropertyChangedEventHandler Implements INotifyPropertyChanged.PropertyChanged
-		Protected Sub NotifyPropertyChanged(ByVal info As String)
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(info))
-		End Sub
 	End Class
 End Namespace

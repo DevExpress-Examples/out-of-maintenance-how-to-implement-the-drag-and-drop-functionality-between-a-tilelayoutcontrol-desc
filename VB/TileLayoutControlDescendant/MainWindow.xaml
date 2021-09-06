@@ -35,7 +35,7 @@
                 </DataTemplate>
             </local:TileLayoutCntrlDescendant.ItemTemplate>
         </local:TileLayoutCntrlDescendant>
-        <dxg:GridControl AutoPopulateColumns="True" Grid.Column="1" AllowDrop="True" Name="gridControl1" Drop="gridControl1_Drop" PreviewMouseDown="gridControl1_PreviewMouseDown" MouseMove="gridControl1_MouseMove">
+        <dxg:GridControl AutoGenerateColumns="AddNew" Grid.Column="1" AllowDrop="True" Name="gridControl1" Drop="gridControl1_Drop" PreviewMouseDown="gridControl1_PreviewMouseDown" MouseMove="gridControl1_MouseMove">
             <dxg:GridControl.View>
                 <dxg:CardView Name="CardView1" ShowTotalSummary="True" ShowGroupPanel="False">
                     <dxg:CardView.CardTemplate>

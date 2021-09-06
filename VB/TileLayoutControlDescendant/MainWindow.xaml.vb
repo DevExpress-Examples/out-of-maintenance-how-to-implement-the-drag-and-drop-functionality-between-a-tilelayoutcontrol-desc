@@ -26,7 +26,7 @@ Namespace TileLayoutControlDescendant
 
 		Private Sub gridControl1_Drop(ByVal sender As Object, ByVal e As DragEventArgs)
 			If e.Data.GetDataPresent("DragDropDataDG") Then
-				TryCast((TryCast(sender, GridControl)).ItemsSource, ObservableCollection(Of ExampleObject)).Add(CType(e.Data.GetData("DragDropDataDG"), ExampleObject))
+				TryCast((TryCast(sender, GridControl)).ItemsSource, ObservableCollection(Of ExampleObject)).Add(DirectCast(e.Data.GetData("DragDropDataDG"), ExampleObject))
 			End If
 		End Sub
 
@@ -69,7 +69,7 @@ Namespace TileLayoutControlDescendant
 		Private Sub desc_Drop(ByVal sender As Object, ByVal e As DragEventArgs)
 			If e.Data.GetDataPresent("DragDropDataGD") Then
 				Dim cntrl As TileLayoutCntrlDescendant = TryCast(sender, TileLayoutCntrlDescendant)
-				TryCast(cntrl.ItemsSource, ObservableCollection(Of ExampleObject)).Add(CType(e.Data.GetData("DragDropDataGD"), ExampleObject))
+				TryCast(cntrl.ItemsSource, ObservableCollection(Of ExampleObject)).Add(DirectCast(e.Data.GetData("DragDropDataGD"), ExampleObject))
 			End If
 		End Sub
 	End Class
