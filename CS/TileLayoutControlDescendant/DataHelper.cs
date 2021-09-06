@@ -28,7 +28,7 @@ namespace TileLayoutControlDescendant
             return collection;
         }
     }
-    public class ExampleObject : DevExpress.Xpf.Mvvm.BindableBase {
+    public class ExampleObject : DevExpress.Mvvm.BindableBase {
         // Fields...
         private string _ImageUri;
         private string _Name;

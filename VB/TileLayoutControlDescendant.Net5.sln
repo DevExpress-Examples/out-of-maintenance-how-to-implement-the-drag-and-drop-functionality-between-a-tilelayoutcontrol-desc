@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2012
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "TileLayoutControlDescendant", "TileLayoutControlDescendant\TileLayoutControlDescendant.vbproj", "{91B2DED7-3830-4BE8-B6B6-B7D77F36E82B}"
+# Visual Studio 16
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "TileLayoutControlDescendant", "TileLayoutControlDescendant\TileLayoutControlDescendant.Net5.vbproj", "{91B2DED7-3830-4BE8-B6B6-B7D77F36E82B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
